@@ -1,0 +1,134 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+{% load static %}
+
+<style>
+  .homepage {
+    < !-- border-color: darkmagenta;
+    border: 2px double darkblue;
+    width: 100%;
+    height: 100%;
+
+
+
+      {
+      % comment %
+    }
+
+    background-images:url('https://cdn.pixabay.com/photo/2012/03/04/00/01/background-21717_960_720.jpg') {
+      % endcomment %
+    }
+
+    background-repet:no-reper;
+
+  }
+
+  body {
+      {
+      % comment %
+    }
+
+    background-image: url(https://cdn.pixabay.com/photo/2012/03/04/00/01/background-21717_960_720.jpg);
+  }
+
+    {
+    % endcomment %
+  }
+
+  .hompage {
+    margin-top: -0px;
+    color: darkblue;
+    background-color: skyblue;
+
+
+  }
+
+  marquee {
+    color: slategray;
+    font-family: cursive;
+    font-size: 18px;
+
+  }
+
+</style>
+
+
+<div class="jumbotron-fluid mx-1">
+  <h1 class="hompage  text-primary bg-dark text-center">VSU COLLEGE RATING SYSTEM </h1>
+  <div class="card">
+    <div class="class card-body">
+      <img src="{% static 'images/vsu1.jpg' %}" alt="main page not visuble" class="homepage">
+
+    </div>
+  </div>
+  <marquee behavior="5" direction="left"><mark>Notiication:-</mark>VIKRAMA SHIMHAPURI UNIVERSITY</marquee>
+  <br>
+  <br>
+  <div class="jumbotron">
+    <div class="row m1-2">
+      <div class="col-md-6">
+        <div class="card flex-md-row mb-5 box-shadow h-md-250">
+          <div class="card-body d-flex flex-column align-items-start">
+            <strong class="d-inline-block mb-2 text-primary">Vikrama Simhapuri University Nellure </strong>
+            <h3 class="mb-0">
+              <a class="text-dark" href="#">No 1 COLLEGE</a>
+            </h3>
+            <div class="mb-1 text-muted"></div>
+            <p class="card-text mb-auto text-justify"><a href="" class="text-info bg-dark text-center"> Vikrama
+                Simhapuri
+                University Nellure</a>, Nellore, in its seminal role as a higher institute is grooming the careers of
+              the
+              youth to create a think-tank of resourcefulness for macro stakes in nation-building. The University is
+              currently offering eleven courses keeping in view the resources of the region and the employability of the
+              graduates. The University was established by Act No. 29/2008 enacted by the Legislature of the State of
+              Andhra Pradesh on 25th June 2008. It started offering six Postgraduate courses of contemporary relevance
+              from August 2008. Research programmes leading to the award of the Ph.D. degree have been launched on
+              29.08.2010.</p>
+            <a href="http://www.simhapuriuniv.ac.in/">Continue reading</a>
+          </div>
+          <div class="img-responsive mt-5 py-5">
+            <img class="card-img-right flex-auto d-none d-md-block" src="{% static 'images/logos.jpg' %}"
+              alt="Card image cap" height="200px" width="270px"><br>
+
+            <img class="img-thumbnail" class="card-img-right flex-auto d-none d-md-block"
+              src="{% static 'images/outside.jpg' %}" alt="Card image cap" height="200px" width="270px">
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-4 ">
+        <div class="card flex-md-row mb-4 box-shadow h-md-300">
+          <div class="card-body d-flex flex-column align-items-start">
+            <strong class="d-inline-block mb-2 text-success">VIKRMA SHIMHAPURI COLLEGE KAVALI</strong>
+            <h3 class="mb-0">
+              <a class="text-dark" href="#">2 nd PLACE</a>
+            </h3>
+            <div class="mb-1 text-muted"></div>
+            <p class="card-text mb-auto text-justify">Prof. P. Venkata Rao , Department of Commerce, VSU PG Centre,
+              Kavali
+              was appointed Dean, College Development Council. He was born on 01-04-1959 at Chimakurthi village,
+              Prakasam
+              District, Andhra Pradesh. He is the elder son of Sri.Venkateswarlu garu and Smt.Adilakshamma garu. He
+              completed his education from 1st class to Degree at Ongole town. Later he joined at S.V.University
+              P.G.Centre Kavali and completed his M.Com.,M.Phil.,and Ph.D.,.He also completed B.Ed., P.G.D.C.M.P., and
+              MBA
+              courses from reputed educational institutions. He has attended for the Training Programme in Applied Rural
+              Banking and Short-term course in Research Methods in social sciences.</p>
+            <a href="http://www.simhapuriuniv.ac.in/Art_Commer_Mag_Principal.php">Continue reading</a>
+          </div>
+          <div class="img-responsive mt-5 py-4">
+            <img class="card-img-right flex-auto d-none d-md-block" src="{% static 'images/kavalilogo.jpg' %}"
+              alt="Card image cap" height="200px" width="270px"><br>
+
+            <img class="img-thumbnail" class="card-img-right flex-auto d-none d-md-block"
+              src="{% static 'images/kavali1.jpg' %}" alt="Card image cap" height="200px" width="270px">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div>
+
+{% endblock content %}

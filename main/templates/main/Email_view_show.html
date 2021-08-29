@@ -1,0 +1,53 @@
+{% extends "main/base.html" %}
+{% load static %}
+
+
+
+{% block content %}
+
+<style>
+    form{
+        text-align: justify;
+     
+      
+    }
+</style>
+
+
+
+    
+<form action="" method="POST">
+    {% csrf_token %}
+    <div class="alert alert-info text-center bg-white w-2">MAIL SENDING PROCESS</div>
+    <table>
+        <tr>
+            <th>USERNAME:</th>
+            <td><input type="text" name="username" class="form-control"></td>
+        </tr>
+        <tr>
+            <th>PASSWORD:</th>
+            <td><input type="password" name="password" class="form-control"></td>
+        </tr>
+        <tr>
+            <th>EMAIl:</th>
+            <td><input type="email" name="email" class="form-control"></td>
+        </tr>  
+        
+        <tr>
+            <th>ENQUIRY/MESSAGES:</th>
+           <td><textarea rows="3" cols="30" type="text" name="message"></textarea></td>
+        </tr>
+
+      <tr>
+          <th></th>
+          <td>
+            <input type="submit" value="submit"  class="btn btn-info text-white">
+            <input type="reset" value="cancel"  class="btn btn-primary text-dark">
+          </td>
+      </tr>
+    </table>
+</form>
+    
+</div>
+{% endblock content %}
+    

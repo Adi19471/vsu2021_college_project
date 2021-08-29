@@ -1,0 +1,116 @@
+{% extends 'main/base.html' %}
+
+{% block title %} Contact_page {% endblock %}
+{% load static %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<style>
+  .disply {
+    text-align: center;
+    color: rgb(212, 212, 248);
+    font-weight: bold;
+    font-family: cursive;
+    background-color: rgb(0, 0, 0);
+    border: 2px dotted #00fa9a;
+    margin-left: 500px;
+    font-size: 20px;
+  }
+
+  iframe {
+    margin-left: 540px;
+    margin-top: -500px;
+  }
+</style>
+
+<div class="container-fluid contact">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="contact-info">
+        <img src="{% static 'images/vsu1.jpg' %}" alt="image" />
+        <h2>Contact Us</h2>
+        <h4>We would love to hear from you !</h4>
+      </div>
+    </div>
+
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6">
+      <form action="" method="POST">
+        {% csrf_token %}
+        {{form|crispy}}
+        
+        <center style="margin-top:-100px;">
+          <input type="submit" class="btn btn-warning" value="Submit">
+          <input type="submit" class="btn btn-info" value="Re-enter">
+        </center>
+      </form>
+    </div>
+  </div>
+</div>
+{% if messages %}
+{% for message in messages %}
+
+<!-- <small class="disply">{{message}}</small> -->
+<!-- <script>{{message}}</script> -->
+<script>
+  alert('{{ message }}');
+
+</script>
+
+?
+{% endfor %}
+{% endif %}
+<!-- map page -->
+
+!<div class="container-fluid offset-2">
+  <iframe
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3865.2666333476336!2d79.92033391483734!3d14.353975289959937!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a4cf2011dc755c9%3A0x18b437872fca69d2!2sVikrama%20Simhapuri%20University%2C%20Andhra%20Pradesh%20524320!5e0!3m2!1sen!2sin!4v1625547843051!5m2!1sen!2sin"
+  width="400" height="300" style="border:2;" allowfullscreen="" loading="lazy"></iframe>
+</div><
+<h3 class="text-center alert alert-warning">DISPLAY CONTACT LIST ...!!</h3>
+{% if pizaa %}
+
+<div class="jumbotron">
+  <div class="row">
+    <div class="col-sm-10">
+      <table class="table table-success table-lg table-hover table-bordered bordered-info">
+        <caption>List of users</caption>
+        <thead>
+          <tr>
+            <th>SR NO</th>
+            <th>First NAME</th>
+            <th>LASTNAME</th>
+            <th>EMAIL</th>
+            <th>COMMENT</th>
+          </tr>
+        </thead>
+        {% for i in pizaa %}
+        <tr>
+          <th scope="row">{{i.id}}</th>
+          <td>{{i.first_name}}</td>
+          <td>{{i.last_name}}</td>
+          <td>{{i.email}}</td>
+          <td>{{i.comment}}</td>
+        </tr>
+
+        {% endfor %}
+
+
+        </tbody>
+      </table>
+
+
+      {% else %}
+      <h4> no contact list</h4>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}

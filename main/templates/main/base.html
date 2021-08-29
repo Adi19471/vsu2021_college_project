@@ -1,0 +1,149 @@
+{% load static %}
+<!doctype html>
+
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- # logo vsu icon  -->
+  <link rel="icon" href="{% static 'images/logos.jpg' %}">
+
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/main.css' %}">
+
+
+  <title>::)VSU_COLLEGE::)</title>
+
+</head>
+<style>
+  .nav-link {
+    color: rosybrown;
+    /* background-color:rgb(133, 125, 125); */
+    font-size: 18px;
+    text-shadow: 1.5px 0.5px darkblue;
+    border-radius: 5%;
+    border: 1px ridge cyan;
+    overflow: hidden;
+    text-align:center;
+
+
+  }
+ 
+</style>
+
+
+<body>
+
+
+
+
+
+
+
+  <div class="col-sm-12">
+
+    <nav class="navbar navbar-expand-sm navbar-warning bg-white text-white">
+      <img src="{% static 'images/logos.jpg' %}" height="40px" />
+      <!-- <img  src="{% static 'images/vsu1.jpg' %}" alt="no logo images" class="img-fluid" width="98%" height="98%"> -->
+      <a class="navbar-brand " href="{% url 'main:home' %}">VSU</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" style="color:rgb(25, 10, 233)" href="{% url 'main:main' %}">HOME<span
+                class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" style="color:rgb(121, 220, 233)" href="{% url 'main:home' %}">GRATINg</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" style="color:rgb(255, 0, 191)" href="{% url 'main:abt' %}">ABOUT</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" style="color:rgb(0, 82, 102)" href="{% url 'main:Email' %}">MAILSENDING</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" style="color:rgb(255, 0, 149)" href="{% url 'main:gallery' %}">GALLERY</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" style="color:rgb(20, 29, 29)" href="{% url 'main:add_movies' %}">NEWCOLLEGE</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" style="color:rgba(103, 153, 88, 0.877)" href="{% url 'main:contact' %}">CONTACT</a>
+          </li>
+
+
+
+          {% if user.is_authenticated %}
+
+          <li class="nav-item dropdown">
+            <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              <small style="color:rgb(122, 114, 114; background-color: white;)">{{ user.username }}</small>
+            </a>
+            <div class="dropdown-menu " aria-labelledby="navbarDropdown">
+              <a class="dropdown-item active" style="color:rgb(223, 231, 148)" href="#">My Profile</a>
+               <!-- admin site implement -->
+
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item active" style="color:rgb(200, 194, 226)" href="{% url 'admin:index' %}">ADMIN-SITE</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item active" style="color:rgb(45, 175, 95)" href="{% url 'accounts:logout' %}">Logout</a>
+            </div>
+
+           
+          
+             
+            </div>
+
+
+          </li>
+          {% else %}
+          <li class="nav-item">
+            <a class="nav-link active" style="color:rgb(117, 57, 167)" href="{% url 'accounts:login' %}">LOGIN</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" style="color:rgba(91, 112, 58, 0.74)" href="{% url 'accounts:register' %}">REGISTER</a>
+          </li>
+
+
+          {% endif %}
+
+        </ul>
+        <form class="form-inline my-1 my-sm-0" method="GET" action="{% url 'main:home' %}">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="title">
+          <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
+
+    {% block content %}
+
+
+    {% endblock %}
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"></script>
+  </div>
+</body>
+
+</html>

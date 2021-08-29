@@ -1,0 +1,69 @@
+{% extends "main/base.html" %}
+{% load static %}
+{% block content %}
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6">
+
+            <h1 class="alert alert-warning bg-success text-center text-white"> Gallery Uplode AREA </h1>
+            <!-- <h2 style="margin-left: 900px;margin-top:-60px">
+                <div class=" btn btn-success bg-danger text-white">
+
+                    <span class="spinner-grow"></span>
+                    developer/ADI
+
+                </div>
+            </h2> -->
+
+
+
+
+            <form action="" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{form.as_p}}
+                <input type="submit" value="Uplode" class="btn btn-warning">
+            </form>
+
+            {% if messages %}
+            {% for message in messages %}
+
+            <small class="alert alert-success text-center mt-1">{{ message }}</small>
+
+            {% endfor %}
+
+            {% endif %}
+
+        </div>
+
+
+        <div class="container">
+
+
+            <div class="alert alert-info text-white ">
+                IMAGES ARE UPDATED HERE
+            </div>
+        </div>
+
+
+        <br>
+
+        
+        <div class="container">
+            <div class="row">
+                {% for i in img %}
+                <div class="col-md-4">
+                    <img src="{{i.img.url}}" alt="no images" class="img-thumbnail" width="400px" height="350px"> <br>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    
+
+
+    </div>
+</div>
+</div>
+
+{% endblock content %}
