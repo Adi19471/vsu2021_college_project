@@ -1,33 +1,170 @@
 {% extends 'main/base.html' %}
-
+{% load static %}
 {% load crispy_forms_tags %}
 
 
 {% block content %}
 
+<style>
+    .form-tap {
+        background-color: lightgreen;
+        margin-top: 30px;
+        width: 490px;
+        line-height: 1.0px;
+        text-align: center;
+        text-overflow: ellipsis;
+        font-weight: 800;
+    }
 
-{% if messages %}
+    h3 {
+        margin-top: -50px;
+    }
 
-{% for message in messages %}
+    #blink {
+        width: 400px;
+        height: 350px;
+        border-radius: 5%;
+        margin-top: 50px image-rendering: -moz-crisp-edges;
+        animation: blinker 5s linear;
 
-{{message}}
+    }
 
-{% endfor %}
+    @keyframes blinker {
+        100% {
+            opacity: 0;
+        }
+    }
 
-{% endif %}
+    .midlepont{
+        margin-left: 560px;
+        margin-top: -890px;
 
-<div class="container">
-    <div class="card">
-        <div class="card-body">
-            <h3 class="text-center">{{ controller }}</h3>
-            <form action="" method="POST">
-                {% csrf_token %}
-                {{ form | crispy }}
-        
-                <input type="submit" value="{{ controller }}" class="btn btn-danger">
-            </form>
+        height: 660px;
+        width: 680px;
+}
+</style>
+
+
+
+<div class="jumbotron">
+    <h3 class="text-center text-primary bg-dark "> ANY COLLEGE CREATING </h3>
+
+    <p>any college names uplode your data <small>But give Genioune
+
+        </small>A college management system built using Django framework. It is designed for interactions between
+        students and College. Features include rating ,feedback, gallery ,mail notification </p>
+
+    <div class="row">
+
+        <div class="col-sm-4">
+            <div class="container form-tap">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="text-center text-info">NEW-COLLEGE</h3>
+                        <form action="" method="POST">
+                            {% csrf_token %}
+                            {{ form | crispy }}
+
+                            <input type="submit" value="{{ controller }}" class="btn btn-danger">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+
+
+</div>
+
+<img src="https://i.pinimg.com/600x315/34/d5/f9/34d5f902c7d035dd5da1cbfe3acc984e.jpg" alt="" class="midlepont">
+
+
+<div class="jumbotron">
+
+    <h3>NELLURE COLLEGE IMAGES </h3>
+
+    <div class="row mt-2">
+        <div class="col-sm-4 col-sm-4">
+            <img class="img-fluid" src="{% static 'images/vsu1.jpg' %}" id="blink" alt="...">
+        </div>
+
+        <div class="col-sm-4 col-sm-4">
+            <img class="img-fluid" src="{% static 'images/newcolleges/college10.jpg' %}" id="blink" alt="...">
+        </div>
+        <div class="col-sm-4 col-sm-4">
+            <img class="img-fluid" src="{% static 'images/newcolleges/college11.jpg' %}" id="blink" alt="...">
+        </div>
+
+    </div>
+
+    <div class="row mt-2">
+
+        <div class="col-sm-4 col-md-4 ">
+            <img class="img-fluid" src="{% static 'images/newcolleges/college1.jpg' %}" id="blink" alt="...">
+        </div>
+        <div class="col-sm-4 col-md-4">
+            <img class="img-fluid" src="{% static 'images/newcolleges/college2.jpg' %}" id="blink" alt="...">
+        </div>
+        <div class="col-sm-4 col-md-4">
+            <img class="img-fluid" src="{% static 'images/newcolleges/college3.jpg' %}" id="blink" alt="...">
+        </div>
+    </div>
+    <div class="row mt-2">
+        <div class="col-sm-4 col-md-4">
+            <img class="img-fluid" src="{% static 'images/newcolleges/college4.jpg' %}" id="blink" alt="...">
+        </div>
+        <div class="col-sm-4 col-md-4">
+            <img class="img-fluid" src="{% static 'images/newcolleges/college5.jpg' %}" id="blink" alt="...">
+        </div>
+        <div class="col-sm-4 col-md-4">
+            <img class="img-fluid" src="{% static 'images/newcolleges/college16.jpg' %}" id="blink" alt="...">
+        </div>
+
+    </div>
+    <div class="row mt-2">
+        <div class="col-sm-4 col-md-4">
+            <img class="img-fluid" src="{% static 'images/newcolleges/college6.jpg' %}" id="blink" alt="...">
+        </div>
+        <div class="col-sm-4 col-md-4">
+            <img class="img-fluid" src="{% static 'images/newcolleges/college7.jpg' %}" id="blink" alt="...">
+        </div>
+        <div class="col-sm-4 col-md-4">
+            <img class="img-fluid" src="{% static 'images/logos.jpg' %}" id="blink" alt="...">
+        </div>
+    </div>
+
+    <div class="row mt-2">
+        <div class="col-sm-4 col-sm-4">
+            <img class="img-fluid" src="{% static 'images/newcolleges/college1.jpg' %}" id="blink" alt="...">
+        </div>
+
+        <div class="col-sm-4 col-sm-4">
+            <img class="img-fluid" src="{% static 'images/newcolleges/college13.jpg' %}" id="blink" alt="...">
+        </div>
+        <div class="col-sm-4 col-sm-4">
+            <img class="img-fluid" src="{% static 'images/newcolleges/college8.jpg' %}" id="blink" alt="...">
+        </div>
+    </div>
+    <div class="row mt-2">
+        <div class="col-sm-4 col-sm-4">
+            <img class="img-fluid" src="{% static 'images/newcolleges/college15.jpg' %}" id="blink" alt="...">
+        </div>
+
+        <div class="col-sm-4 col-sm-4">
+            <img class="img-fluid" src="{% static 'images/newcolleges/college17.jpg' %}" id="blink" alt="...">
+        </div>
+        <div class="col-sm-4 col-sm-4">
+            <img class="img-fluid" src="{% static 'images/newcolleges/college18.jpg' %}" id="blink" alt="...">
         </div>
     </div>
 </div>
+</div>
+</div>
+
+
+
 
 {% endblock %}
