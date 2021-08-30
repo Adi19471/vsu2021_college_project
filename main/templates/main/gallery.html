@@ -2,29 +2,27 @@
 {% load static %}
 {% block content %}
 
-
+<style>
+    .gallerymidle{
+        margin-left: 65px;
+        background-color: lightgray;
+    }
+</style>
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-6">
 
-            <h1 class="alert alert-warning bg-success text-center text-white"> Gallery Uplode AREA </h1>
-            <!-- <h2 style="margin-left: 900px;margin-top:-60px">
-                <div class=" btn btn-success bg-danger text-white">
+         
+     
 
-                    <span class="spinner-grow"></span>
-                    developer/ADI
-
-                </div>
-            </h2> -->
-
-
-
-
-            <form action="" method="POST" enctype="multipart/form-data">
-                {% csrf_token %}
-                {{form.as_p}}
-                <input type="submit" value="Uplode" class="btn btn-warning">
-            </form>
+       <div class=gallerymidle>
+        <form action="" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+               <h5 class="alert alert-warning bg-warning text-center text-primary"> GALLERY UPLODE AREA </h5>
+            {{form.as_p}}
+            <input type="submit" value="Uplode" class="btn btn-warning">
+        </form>
+         </div>
 
             {% if messages %}
             {% for message in messages %}

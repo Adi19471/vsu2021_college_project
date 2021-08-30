@@ -6,48 +6,83 @@
 {% block content %}
 
 <style>
-    form{
-        text-align: justify;
-     
-      
+  
+
+    table {
+        text-align: center;
+        border: 1px ridge black;
+
     }
+
+    .box {
+        border: 2px dashed black;
+        margin-left: 350px;
+        margin-right: 400p;
+        margin-top: -410px;
+    }
+
+    .gifymail {
+        width: 200px;
+        height: 70px;
+        margin: auto 350px;
+        background-color: black;
+    }
+    .sidebarimage{
+        
+        width: 320px;
+        height: 370px;
+        padding: auto;
+        margin-top: 50px;
+        margin-left: 7px;
+
+    }
+
 </style>
 
 
+<img src="{% static 'images/mail.jpg' %}" alt="" class="sidebarimage" class="img-fluid">
 
-    
-<form action="" method="POST">
-    {% csrf_token %}
-    <div class="alert alert-info text-center bg-white w-2">MAIL SENDING PROCESS</div>
+
+<div class="box">
+
     <table>
-        <tr>
-            <th>USERNAME:</th>
-            <td><input type="text" name="username" class="form-control"></td>
-        </tr>
-        <tr>
-            <th>PASSWORD:</th>
-            <td><input type="password" name="password" class="form-control"></td>
-        </tr>
-        <tr>
-            <th>EMAIl:</th>
-            <td><input type="email" name="email" class="form-control"></td>
-        </tr>  
-        
-        <tr>
-            <th>ENQUIRY/MESSAGES:</th>
-           <td><textarea rows="3" cols="30" type="text" name="message"></textarea></td>
-        </tr>
+        <form action="{% url 'main:email' %}" method="POST">
+            {% csrf_token %}
+            <div class="alert alert-info text-primary text-center bg-warning w-8">MAIL SENDING PROCESS</div>
 
-      <tr>
-          <th></th>
-          <td>
-            <input type="submit" value="submit"  class="btn btn-info text-white">
-            <input type="reset" value="cancel"  class="btn btn-primary text-dark">
-          </td>
-      </tr>
+
+            <div class="form-roup">
+                <!-- images mail sent -->
+                <img src="https://uk.teamunify.com/hsst/news/358c2882a2b14ac38e9a7dda004731c6/untitled-1_064446.gif"
+                    alt="no images" class="gifymail">
+            </div>
+
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Enter Your Email ID:)</label>
+                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com"
+                    name="email">
+            </div>
+
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Enter Your Subject Title:)</label>
+                <input type="text" class="form-control" id="exampleFormControlInput1"
+                    placeholder="Nice Application creatae" name="subject">
+            </div>
+
+
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1">Write Your Message:)</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" cols="5"
+                    placeholder="messages.." name="message"></textarea>
+            </div>
+  
+        <center>
+            <input type="submit" value="Submit" class="btn btn-info bg-info py-auto">
+            <input type="reset" value="Cancel" class="btn btn-primary bg-warning py-auto">
+        </center>
+     
+
+        </form>
     </table>
-</form>
-    
 </div>
 {% endblock content %}
-    

@@ -23,7 +23,7 @@ urlpatterns = [
     path('contact/',views.contact,name="contact"),
     path('gallery/',views.gallery,name="gallery"),
     
-    path('email/',views.Email_view,name="Email"),
+    path('email/',views.Email_view,name="email"),
     
 ]+ static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
 

@@ -1,11 +1,17 @@
+import django
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import *
 from .forms import *
 from django.db.models import Avg
 
-from django.conf import settings 
-from django.core.mail import send_mail
+
+
+
+from django.core.mail import send_mail 
+# mail import project 
+from College_rating.settings import EMAIL_HOST_USER
+
 
 # messages disply from settings to views import
 
@@ -223,16 +229,21 @@ def gallery(request):
 
 
 def Email_view(request):
+    if request.method=='POST':
+        to = request.POST.get('email')
+        sub = request.POST.get('subject')
+        msg = request.POST.get('message')
 
-    send_mail (
-        subject="You Visite COllEGE RATING PROJECT",
-        message="hello you clicked rating app",
-        from_email=settings.EMAIL_HOST_USER,
-        recipient_list=['djangomvt@gmail.com'],
-       
-    )
-    # return redirect("/")
-    # return HttpResponse("you got okay")
+        email = EmailData(email=to,subject=sub,message=msg)
+        email.save()
+        email = send_mail(sub,msg,EMAIL_HOST_USER,[to])
+
+        if email:
+            return HttpResponse("Your Enquiry Succesfully saved ")
+        else:
+            return HttpResponse("Not sended Try agina Your email not valid")
+
     return render(request, 'main/Email_view_show.html')
 
 
+                                                                                                                      

@@ -35,7 +35,7 @@
 
 
   }
- 
+
 </style>
 
 
@@ -71,7 +71,7 @@
             <a class="nav-link active" style="color:rgb(255, 0, 191)" href="{% url 'main:abt' %}">ABOUT</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" style="color:rgb(0, 82, 102)" href="{% url 'main:Email' %}">MAILSENDING</a>
+            <a class="nav-link active" style="color:rgb(0, 82, 102)" href="{% url 'main:email' %}">MAILSENDING</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" style="color:rgb(255, 0, 149)" href="{% url 'main:gallery' %}">GALLERY</a>
@@ -121,17 +121,41 @@
           {% endif %}
 
         </ul>
-        <form class="form-inline my-1 my-sm-0" method="GET" action="{% url 'main:home' %}">
-          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="title">
-          <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
+    
+        <form class="form-inline my-0 my-sm-0" method="GET" action="{% url 'main:home' %}">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="title"><button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
+         
         </form>
-      </div>
+       </div>
+      
     </nav>
 
     {% block content %}
 
 
+
+
+
     {% endblock %}
+
+<!-- FOOTER -->
+   
+   <footer class="text-center text-warning bg-dark ">
+<center>
+  <p class="float-end"><a href="#"class="btn btn-primary bg-info">Back to Home</a></p>
+     <p>&copy; 2021–2021 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms&Condition</a>
+
+     
+<br>
+<a href="http://aditooyou.pythonanywhere.com/home/">www.DJANGOADI.com</a>
+<br>
+<a href="http://adi3you.pythonanywhere.com/login/">www.ADItoyou.com</a>
+
+  </center>
+   </footer>
+
+
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"

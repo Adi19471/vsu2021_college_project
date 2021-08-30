@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django.db.models import fields
 from .models import *
 
 # Register your models here.
@@ -17,4 +18,13 @@ class MovieAdmin(admin.ModelAdmin):
     
     list_filter = ("name", "description", "averageRating",)
 
+
+# images savedin external page Html
+
 admin.site.register(Image)
+
+
+# email data base saved =email
+
+
+admin.site.register(EmailData)

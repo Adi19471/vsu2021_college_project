@@ -62,3 +62,14 @@ class Image(models.Model):
     
     class Meta:
         verbose_name_plural = "IMAGES"
+
+
+# email process 
+
+class EmailData(models.Model):
+    email = models.EmailField(max_length=500)
+    subject = models.CharField(max_length=300)
+    message = models.TextField(max_length=1000)
+
+    def __str__(self) -> str:
+        return self.email

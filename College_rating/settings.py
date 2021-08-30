@@ -142,11 +142,20 @@ MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-EMAIL_BACKENDS = 'smtp.gmail.com'
-EMAIL_HOST_USER ='akumatha@gmail.com'
-EMAIL_HOST_PASSWORD = 'jecfxonuueoizmut'
-EMAIL_HOST_TLS = True
-EMAIL_PORT = 587
+
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# EMAIL_BACKENDS = 'smtp.gmail.com'
+# EMAIL_HOST_USER ='adis019471@gmail.com'
+# EMAIL_HOST_PASSWORD = 'Bigbasket@gmail'
+# EMAIL_HOST_TLS = True
+# EMAIL_PORT = 587
+
+# mai lending process vsu
+
+EMAIL_USE_TLS = True  
+EMAIL_HOST = 'smtp.gmail.com'  
+EMAIL_PORT = 587  
+EMAIL_HOST_USER = 'djangomvtadi@gmail.com'  
+EMAIL_HOST_PASSWORD = 'Bigbasket@019471'  
